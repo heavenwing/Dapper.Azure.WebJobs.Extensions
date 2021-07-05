@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <NuspecFile>Dapper.Azure.WebJobs.Extensions.SqlServer.nuspec</NuspecFile>
     <NuspecProperties>$(NuspecProperties);version=$(PackageVersion)</NuspecProperties>
     <NuspecProperties>$(NuspecProperties);configuration=$(configuration)</NuspecProperties>
@@ -9,8 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.90" />
-    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.27" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.*" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.*" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
