@@ -92,14 +92,14 @@ namespace Samples
         }
 
         [FunctionName("SelectCustomerSample5")]
-        public static void SelectCustomerSample5 ([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer,
+        public static void SelectCustomerSample5([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer,
                                           [Dapper(Sql = "select2.sql",
                                                   SqlConnection = "SqlConnection",
                                                   Parameters = "Processed:{datetime:yyyy-MM-dd HH:mm:ss}")] List<Customer> customers,
                                           [ServiceBus("myqueue", Connection = "ConnectionStrings:ServiceBusConnection")] ICollector<Customer> outputSbQueue,
                                           ILogger log)
         {
-            customers.ForEach(x=> outputSbQueue.Add(x));
+            customers.ForEach(x => outputSbQueue.Add(x));
         }
     }
 }

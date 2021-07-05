@@ -1,15 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <NuspecFile>Dapper.Azure.WebJobs.Extensions.SqlServer.nuspec</NuspecFile>
     <NuspecProperties>$(NuspecProperties);version=$(PackageVersion)</NuspecProperties>
     <NuspecProperties>$(NuspecProperties);configuration=$(configuration)</NuspecProperties>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="1.60.1" />
-    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.5" />
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.27" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.0" />
   </ItemGroup>
 
 </Project>
